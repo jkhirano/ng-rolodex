@@ -1,4 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
+import { FormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 
 import { AppRoutingModule } from "./app-routing.module";
@@ -7,8 +9,8 @@ import { HomeComponent } from "./pages/home/home.component";
 import { ContactsComponent } from "./pages/contacts/contacts.component";
 import { CreateComponent } from "./pages/create/create.component";
 import { ProfileComponent } from "./pages/profile/profile.component";
-import { HeaderComponent } from "./shared/header/header.component";
 import { NotFoundComponent } from "./pages/notFound/notFound.component";
+import { HeaderComponent } from "./shared/header/header.component";
 
 @NgModule({
   declarations: [
@@ -17,10 +19,10 @@ import { NotFoundComponent } from "./pages/notFound/notFound.component";
     ContactsComponent,
     CreateComponent,
     ProfileComponent,
-    HeaderComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    HeaderComponent
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
 })

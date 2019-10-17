@@ -1,0 +1,24 @@
+.header-container {
+  margin: 0;
+  padding: 15px;
+  background-color: lighten(grey, 35%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 22px;
+
+  .header-left {
+    text-transform: uppercase;
+  }
+
+  li {
+    display: inline-block;
+    margin-right: 25px;
+
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 22px;
+    }
+  }
+}

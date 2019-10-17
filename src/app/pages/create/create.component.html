@@ -1,1 +1,97 @@
 <h1>Create Contacts</h1>
+
+<form>
+  <div class="input-group">
+    Name:
+    <label for="">
+      <input
+        type="text"
+        name="name"
+        [(ngModel)]="formData.name"
+        (keyup)="validateName()"
+        (blur)="validateName()"
+        #name="ngModel"
+        #nameInput
+      />
+
+      <div class="error" *ngIf="errors.name && name.touched">
+        {{ errors.name }}
+      </div>
+    </label>
+  </div>
+
+  <div class="input-group">
+    Email:
+    <label for="email">
+      <input
+        type="text"
+        name="email"
+        [(ngModel)]="formData.email"
+        (keyup)="validateEmail()"
+        (blur)="validateEmail()"
+        #email="ngModel"
+      />
+
+      <div class="error" *ngIf="errors.email && email.touched">
+        {{ errors.email }}
+      </div>
+    </label>
+  </div>
+
+  <div class="input-group">
+    Address:
+    <label for="address">
+      <input
+        type="text"
+        name="address"
+        [(ngModel)]="formData.address"
+        (keyup)="validateAddress()"
+        (blur)="validateAddress()"
+        #address="ngModel"
+      />
+
+      <div class="error" *ngIf="errors.address && address.touched">
+        {{ errors.address }}
+      </div>
+    </label>
+  </div>
+
+  <div class="input-group">
+    Mobile:
+    <label for="mobile">
+      <input
+        type="number"
+        name="mobile"
+        [(ngModel)]="formData.mobile"
+        (keyup)="validateMobile()"
+        (blur)="validateMobile()"
+        #mobile="ngModel"
+      />
+
+      <div class="error" *ngIf="errors.mobile && mobile.touched">
+        {{ errors.mobile }}
+      </div>
+    </label>
+  </div>
+
+  <button
+    class="btn"
+    [disabled]="!nameValid || !emailValid || !addressValid || !mobileValid"
+    (click)="submit()"
+  >
+    Submit
+  </button>
+</form>
+
+<!-- shows name | transforms to uppercase -->
+{{ formData.name | uppercase }}
+<br />
+<!-- shows email -->
+{{ formData.email }}
+<br />
+<!-- {{ nameValid }} -->
+<br />
+{{ "touched:" + email.touched }}<br />
+{{ "untouched:" + email.untouched }}<br />
+{{ "pristine:" + email.pristine }}<br />
+{{ "dirty:" + email.dirty }}
