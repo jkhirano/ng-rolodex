@@ -31,6 +31,12 @@ app.get("/api/contacts", (req, res) => {
   });
 });
 
+app.get("/api/home", (req, res) => {
+  return Contact.fetchAll().then(results => {
+    res.status(200).json(results);
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Server started on PORT: ${PORT}`);
 });
